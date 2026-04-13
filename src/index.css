@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --color-primary: #131314;
+  --color-secondary: #131314;
+  --sidebar-bg: #1e1f20;
+  --text-primary: #e3e3e3;
+  --surface: rgba(255, 255, 255, 0.08);
+  --surface-hover: rgba(255, 255, 255, 0.14);
+  --border-soft: rgba(255, 255, 255, 0.12);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+} 
+
+body{
+  background: #131314;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+#root{
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-layout{
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.app-overlay{
+  display: none;
+}
+
+@media (max-width: 1024px){
+  .app-overlay{
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.54);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1000;
+  }
+
+  .app-overlay.show{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
